@@ -1,0 +1,10 @@
+{% set keystone=salt["grains.filter_by"]({
+  "default":{
+    "name": "keystone",
+    "pkg": "keystone",
+    "service": "keystone",
+    "client_pkg": "python-keystoneclient",
+  }
+  },merge=salt["pillar.get"]("keystone:lookup")) %}
+{#- vim:ft=sls
+-#}
