@@ -6,7 +6,7 @@ PORT=$3
 
 COUNT=0
 
-while ! nc -q 1 $HOST $PORT</dev/null; 
+while ! nc -w 1 $HOST $PORT</dev/null; 
 do 
     sleep 1; 
     COUNT=$(( $COUNT+1 ))

@@ -1,4 +1,16 @@
 {% set keystone=salt["grains.filter_by"]({
+  "Debian": {
+    "name": "keystone",
+    "pkg": "keystone",
+    "service": "keystone",
+    "client_pkg": "python-keystoneclient",
+  },
+  "RedHat": {
+    "name": "keystone",
+    "pkg": "openstack-keystone",
+    "service": "openstack-keystone",
+    "client_pkg": "python-keystoneclient",
+  },
   "default":{
     "name": "keystone",
     "pkg": "keystone",

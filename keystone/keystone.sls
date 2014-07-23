@@ -1,6 +1,5 @@
 {%- from "keystone/map.jinja" import keystone with context %}
 
-
 /tmp/wait-port.sh:
   file.managed:
     - source: salt://keystone/files/wait-port.sh

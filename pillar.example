@@ -10,6 +10,7 @@ keystone:
   admin_ip: 10.0.0.12
   mysql:
     ip: 10.0.0.12
+    host: '%'
     password: 'pass'
   memcached:
     ip: [ 10.0.0.12 ]
