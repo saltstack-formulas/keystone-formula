@@ -18,12 +18,9 @@ keystone:
     admin:
       password: 'pass'
       email: zhang.lei.fly@gmail.com
-  conf:
+  config:
     DEFAULT:
-      admin_token: ADMIN_TOKEN
-      debug: False
-      verbose: False
-    memcache:
-      servers: 10.0.0.12:11211
+      #admin_token: ADMIN_TOKEN
+      debug: true
 {#- vim:ft=sls
 -#}
