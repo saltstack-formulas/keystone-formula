@@ -37,7 +37,7 @@
     "provider": "keystone.token.providers.uuid.Provider"
   }
 } %}
-{{ keystone_config| pprint(True) }}
+
 {% for section, value in salt["pillar.get"]("keystone:config").iteritems() %}
   {% if not keystone_config.has_key(section) %}
     {% do keystone_config.update({ section:{} }) %}
@@ -45,6 +45,5 @@
   {% do keystone_config[section].update(value) %}
 {% endfor %}
 
-{{ keystone_config| pprint}}
 {#- vim:ft=sls
 -#}
