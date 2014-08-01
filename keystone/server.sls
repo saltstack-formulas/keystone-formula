@@ -7,8 +7,12 @@
   service.running:
     - name: {{ keystone.service }}
     - enable: True
+    - restart: True
     - require:
       - pkg: {{ keystone.name }}
+      - file: /etc/keystone/keystone.conf
+    - watch:
+      - file: /etc/keystone/keystone.conf
 
 {{ keystone.name }}_sync_db:
   cmd.run:
@@ -20,3 +24,5 @@
   file.managed:
     - source: salt://keystone/files/keystone.conf
     - template: jinja
+    - require:
+      - pkg: {{ keystone.name }}
