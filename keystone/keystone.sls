@@ -36,8 +36,8 @@ keystone_admin_user:
     - tenant: admin
     - enable: True
     - roles:
-      - admin:
-        - admin
+        admin:
+          - admin
 
 keystone_keystone_service:
   keystone.service_present:
