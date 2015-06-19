@@ -38,7 +38,7 @@
   }
 } %}
 
-{% for section, value in salt["pillar.get"]("keystone:config").iteritems() %}
+{% for section, value in salt["pillar.get"]("keystone:config", {}).iteritems() %}
   {% if not keystone_config.has_key(section) %}
     {% do keystone_config.update({ section:{} }) %}
   {% endif %}
